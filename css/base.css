@@ -1,0 +1,314 @@
+/**
+ * Base
+ * Copyright 2020
+ * Author
+ * Licensed 
+ */
+/*------------------------------------*\
+    Content
+\*------------------------------------*/
+/**
+ * Content
+ * Core
+ * Global
+ * Utility
+ */
+
+
+/*------------------------------------*\
+    Core
+\*------------------------------------*/
+
+/* Default style */
+*{
+	box-sizing: border-box;
+	position: relative;
+}
+body{
+	font-family: Helvetica,Arial,"Noto Sans TC","Helvetica Neue","微軟正黑體","Microsoft JhengHei", sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	font-weight: 300;
+	color: #40414f;
+	background-color: #fff;
+}
+a{
+	color: #40414f;
+	outline: none;
+}
+/* a:hover{
+	color: #6772E5;
+} */
+/* Heading styles */
+h1,h2,h3,h4,h5,h6,p,.h1,.h2,.h3,.h4,.h5,.h6{
+	margin: 0;
+	padding: 0;
+}
+/* List style */
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*------------------------------------*\
+    Global
+\*------------------------------------*/
+
+/* Typography */
+h1,.h1,.heading-1{
+
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 1.35;
+	letter-spacing: -0.02em;
+}
+h2,.h2,.heading-2{
+
+	font-size: 3rem;
+	font-weight: 500;
+	line-height: 56px;
+	lett
+}
+h3,.h3,.heading-3{
+
+	font-size: 34px;
+	font-weight: 400;
+	line-height: 48px;
+	lett
+}
+h4,.h4,.heading-4{
+
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 32px;
+	lett
+}
+h5,.h5,.heading-5{
+
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1;
+	let
+}
+h6,.h6,.heading-6{
+
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	let
+}
+p,.para{
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 32px;
+	color: #686C71;
+}
+.para.para--sm{
+	font-size: 14px;
+	line-height: 24px;
+}
+
+
+/* background color */
+.bgc--default{background-color: #F3F4F5;}
+
+
+/* color */
+.color--default{color: #F3F4F5;}
+
+
+
+/*------------------------------------*\
+    Component
+\*------------------------------------*/
+
+/* Button */
+.btn{
+	/* structure */
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	box-sizing: border-box;
+	margin: 0 8px;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 24px;
+	min-width: 64px;
+
+	/* style */
+	font-size: 16px;
+	text-align: center;
+	font-weight: 400;
+	font-family: Helvetica,Arial,"Noto Sans TC","Helvetica Neue","微軟正黑體","Microsoft JhengHei", sans-serif;
+	letter-spacing: 0;
+	color: #fbfbfb;
+	background-color: #4BD2D0;
+	border: solid 1px #fbfbfb;
+	border-radius: 22px;
+	box-shadow:  0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+	text-decoration: none;
+	/* text-transform: uppercase; */
+	outline: none;
+
+	/* interaction */
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	-webkit-user-drag: none;
+}
+.btn.btn-2{
+	border-style: none;
+	/* font-size: 12px; */
+}
+
+.btn.btn--hover,
+.btn:hover{
+	color: #6cdad8;
+	background-color: #fbfbfb;
+	border: solid 2px #6cdad8;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--active,
+.btn:active{
+	color: #fbfbfb;
+	background-color: #6ad1cf;
+	border: solid 2px #6ad1cf;
+	transform: translateY(1px);
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+/* .btn.btn--primary,
+.btn.btn--secondary,
+.btn.btn--positive,
+.btn.btn--negative,
+.btn.btn--alert{
+	color: #fbfbfb;
+}
+
+.btn.btn--primary{
+	background-color: #3ecf8e;
+}
+.btn.btn--primary.btn--hover,
+.btn.btn--primary:hover{
+	background-color: #53e8a5;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--primary.btn--active,
+.btn.btn--primary:active{
+	background-color: #30ba7c;
+	transform: translateY(1px);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 6px rgba(0,0,0,.08);
+}
+.btn.btn--secondary{
+	background-color: #6772e5;
+}
+.btn.btn--secondary.btn--hover,
+.btn.btn--secondary:hover{
+	background-color: #7795f8;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--secondary.btn--active,
+.btn.btn--secondary:active{
+	background-color: #555abf;
+	transform: translateY(1px);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 6px rgba(0,0,0,.08);
+}
+.btn.btn--positive{
+	background-color: #00BB91;
+}
+.btn.btn--positive.btn--hover,
+.btn.btn--positive:hover{
+	background-color: #00d1a2;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--positive.btn--active,
+.btn.btn--positive:active{
+	background-color: #01a580;
+	transform: translateY(1px);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 6px rgba(0,0,0,.08);
+}
+.btn.btn--negative{
+	background-color: #f84545;
+}
+.btn.btn--negative.btn--hover,
+.btn.btn--negative:hover{
+	background-color: #f46161;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--negative.btn--active,
+.btn.btn--negative:active{
+	background-color: #d63b3b;
+	transform: translateY(1px);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 6px rgba(0,0,0,.08);
+}
+.btn.btn--alert{
+	background-color: #f7ba36;
+}
+.btn.btn--alert.btn--hover,
+.btn.btn--alert:hover{
+	background-color: #ffcb5b;
+	transform: translateY(-1px);
+	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+}
+.btn.btn--alert.btn--active,
+.btn.btn--alert:active{
+	background-color: #d8a22f;
+	transform: translateY(1px);
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 6px rgba(0,0,0,.08);
+}
+.btn--disabled,
+.btn--disabled:hover,
+.btn--disabled:active,
+.btn--disabled:focus{
+	color: #686C71 !important;
+	background-color: #B2BAC4 !important;
+	pointer-events: none;
+} */
+/* size */
+.btn.btn--lg{
+	font-size: 16px;
+	line-height: 52px;
+	height: 52px;
+	font-weight: 400;
+	border-radius: 28px;
+}
+.btn.btn--md{
+	font-size: 16px;
+	line-height: 44px;
+	height: 44px;
+}
+.btn.btn--sm{
+	font-size: 14px;
+	line-height: 32px;
+	height: 32px;
+	padding: 0 16px;
+}
+/* btn group */
+.btn-group{
+	/* border: 1px solid #000; */
+	display: inline-flex;
+}
+.btn-group .btn:not(:last-child){
+	margin-right: 8px;
+}
+
+
+/* Card */
+.card{
+	background-color: #fbfbfb;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
+
+/*------------------------------------*\
+    Utility
+\*------------------------------------*/

@@ -1,0 +1,654 @@
+@charset "UTF-8"
+
+$color_graypurple: #475790
+$color_littlepurple: #B7B7E1
+$color_purple: #D1C8E1
+$color_green: #6cdad8
+$color_darkgreen: #4BD2D0
+$color_black: #474954
+
+*
+  position: relative
+  font-family: 微軟正黑體
+  box-sizing: border-box
+  
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
+  // font-weight: bold
+  margin: 0
+  padding: 0
+  color: $color_graypurple
+  font-weight: 600
+
+// *hero
+.hero
+  // border: solid 1px #666
+  padding-top: 150px
+  padding-bottom: 120px
+.hero-short
+  padding-top: 20px
+  padding-bottom: 120px
+// navbar
+.navbar
+  height: 85px
+  width: 100%
+  position: fixed
+  z-index: 500
+  // background-color: $color_purple
+  &.active
+    background-color: $color_purple
+    opacity: 0.8
+  .brand
+    display: inline-block
+    text-decoration: none
+    img
+      width: 70px
+      height: 70px
+      margin: 8px 16px
+    h2
+      color: $color_graypurple
+      font-size: 1.5rem
+      margin-top: 10px
+.nav
+  float: right
+  .nav-item
+    float: left
+    padding: 0 16px
+    color: $color_graypurple
+    font-size: 18px
+    font-weight: 600
+    overflow: hidden
+    &:hover
+      color: $color_graypurple
+    &:after
+      display: block
+      content: ""
+      width: 90%
+      // height: 3px
+      border: solid 2px $color_graypurple
+      position: absolute
+      top: 40px
+      left: -100%
+      transition: 1s
+    &:hover:after
+      animation: moveRight 1s forwards ease-in-out
+      @keyframes moveRight
+        0%
+          left: -100%
+        100%
+          left: 100%
+    .nav-link
+      line-height: 85px
+      text-decoration: none
+.menu
+  display: none
+// 手機版navbar
+@media( max-width:800px )
+  .navbar
+    height: 100%
+    width: 200px
+    position: fixed
+    top: 0
+    right: -200px
+    padding: 16px
+    background-color: #fbfbfb
+    transition: 0.4s ease-in
+    .nav 
+      .nav-item
+        display: block
+        width: 100%
+        text-align: justify
+        &::after
+          display: none
+        .nav-link
+          line-height: 60px !important
+  .navbar.open
+    right: 0
+  .menu
+    display: inline-block
+    position: absolute
+    top: 0
+    left: 0
+    width: 40px
+    // border: 2px solid #666
+    background-color: $color_graypurple
+    padding: 6px
+    margin: 12px
+    border-radius: 4px
+    z-index: 100
+
+// title共用
+@mixin titcom
+  font-size: 2.5rem
+  font-weight: 600
+// spe-title共用
+@mixin spetitcom
+  font-size: 6.5rem
+  font-weight: 900
+
+//.content共用
+.content
+  font-size: 1.2rem
+  line-height: 2rem
+
+//按鈕動畫
+.scale-up-center 
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+          animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+// .slide-right 
+//   -webkit-animation: slide-right 0.5s cubic-bezier(0.895, 0.030, 0.685, 0.220) both
+//           animation: slide-right 0.5s cubic-bezier(0.895, 0.030, 0.685, 0.220) both
+.slide-in-right
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both
+          animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both
+.bounce-in-right 
+  -webkit-animation: bounce-in-right 1.1s both
+          animation: bounce-in-right 1.1s both
+.scale-in-ver-center 
+  -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+          animation: scale-in-ver-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+.bounce-in-fwd 
+  -webkit-animation: bounce-in-fwd 1.1s 0.3s both
+          animation: bounce-in-fwd 1.1s 0.3s both
+.fade-in-bottom 
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+          animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+.fade-in-bottom.bottom2 
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.9s both
+          animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.9s both
+section
+  &#jumbotron.jumbotron
+    background-image: linear-gradient(to bottom right,#6161bd,#a796c5,#e2e2f3)
+    padding-top: 500px
+    padding-bottom: 440px
+    .container-fluid
+      .big-title
+        font-size: 8rem
+        font-weight: 900
+        line-height: 9.5rem
+        letter-spacing: 1rem
+        color: rgba(255,255,255,0.7)
+        text-shadow: -6px 10px 20px  rgba(255,255,255,.6)
+        position: absolute
+        left: 39%
+        top: -200px
+      .big-title.title2
+        top: 30%
+        left: 45%
+        font-size: 9rem
+      .sub-title
+        font-size: 1.3rem
+        letter-spacing: 8px
+        color: $color_graypurple
+        position: absolute
+        right: 16%
+        top: -65px
+      .btn-group.pos
+        position: absolute
+        left: 45%
+        top: 200px
+      @media screen and ( max-width: 800px )
+        .big-title
+          font-size: 4.5rem
+          top: -190px
+        .big-title.title2
+          font-size: 5rem
+          top: -30px
+        .sub-title
+          font-size: 1rem
+        .btn-group.pos
+          top: 120px
+        
+  &#about-me 
+    .img-con
+      width: 90%
+      // margin-left: 3rem
+      img
+        width: 90%
+        border-radius: 60px 15px
+    .img-con.img1
+      position: absolute
+      right: 150px
+      bottom: 60px
+    .big-title
+      position: absolute
+      top: -150px
+      right: 0
+      font-size: 6rem
+      font-weight: 900
+      margin-bottom: 1.5rem
+      color: $color_littlepurple
+
+    @media screen and ( max-width: 414px )
+      .big-title
+        font-size: 3rem
+
+    .title-bar
+      text-align: left
+      margin-top: 30px
+      .content-title
+        font-size: 2rem
+        font-weight: 600
+        color: $color_graypurple
+      .content
+        line-height: 2rem
+        margin-top: 1.5rem
+        margin-bottom: 1.5rem
+    .info-group
+      display: flex
+      flex-direction: row
+      .email
+        margin-right: 1rem
+      .fa-envelope
+        color: $color_graypurple
+      .fa-mobile-alt
+        margin-left: 2rem
+        color: $color_graypurple
+      .phone
+        margin-right: 1rem
+    a 
+      display: block
+      .btn
+        margin-top: 3rem
+ 
+  &#web-project ,&#project
+    background-color: $color_littlepurple
+    span.spe-title
+      position: absolute
+      left: 380px
+      top: -30px
+      +spetitcom
+      color: #fff
+    h3.big-title
+      position: absolute
+      left: 150px
+      +titcom
+      color: #fff
+    
+    .img-con.pos
+      margin-left: -80px
+    .img-con
+      width: 90%
+      height: 60vh
+      margin-left: 3rem
+      // left: -120px
+      padding-bottom: 64px
+      .image
+        display: block
+        font-size: 0px
+        width: 100%
+        height: 120%
+        border-radius: 12px
+        background-size: 100% auto
+        background-position: center center
+        background-repeat: no-repeat
+        transition: all 0.3s
+      .image.image1
+        background-image: url('../image/宣傳照.jpg')
+      .image.image2
+        background-image: url('../image/works/web design/理想混蛋2.JPG')
+      .image.image3
+        background-image: url("../image/works/web design/日沐(待改).JPG")
+      .image:hover
+        cursor: pointer
+        &:before
+        background-size: 110% auto
+        filter: opacity(.7)
+    // .img-con.pos
+    //   left: 0
+    .pos
+      display: flex
+      // flex-direction: column
+      flex-wrap: wrap
+      align-items: center
+      justify-content: flex-end
+      margin: 60px 0
+      margin-top: 100px
+      .hint-con
+        // flex-direction: column
+        // align-self: flex-end 
+        .hint,.hint2
+          font-size: 1.2rem
+          font-weight: 600
+        .hint
+          &:after
+            content: ""
+            display: block
+            position: absolute
+            top: -1px
+            left: 70px
+            height: 30px
+            width: 30px
+            background-image: url("../image/icon/up-arrow.png")
+            background-size: contain
+            background-position: center center
+            background-repeat: no-repeat
+        .hint2
+          &:before
+            content: ""
+            display: block
+            position: absolute
+            top: -1px
+            left: -40px
+            height: 30px
+            width: 30px
+            background-image: url("../image/icon/reverse-arrow.png")
+            background-size: contain
+            background-position: center center
+            background-repeat: no-repeat           
+    .pos.pos-2
+      justify-content: flex-start
+  &#project
+    .col-6
+      // .img-con
+      //   left: -40px
+
+        
+  &#web-works
+    h3.big-title
+      text-align: center
+      +titcom
+      font-size: 4rem
+      color: $color_graypurple
+    span.spe-title
+      position: absolute
+      right: 35%
+      top: -30px 
+      +spetitcom
+      color: $color_graypurple
+    .shot-item
+      width: 100%
+      
+      .face
+        width: 100%
+        transition: 0.3s 
+      .face.face1
+        height: 400px
+        box-shadow: 0 0 15px rgba(0,0,0,.3)
+      .face.face2
+        // height: 100px
+        // background-color: rgba(255,255,255,.1)
+        box-shadow: 0 3px 15px rgba(0,0,0,.3)
+      .image
+        display: block
+        font-size: 0px
+        width: 100%
+        height: 400px
+        background-size: 100% auto
+        background-position: center center
+        background-repeat: no-repeat
+        transition: all 0.3s
+      .image.image1
+        background-image: url("../image/web/1.jpg")
+      .image.image2
+        background-image: url("../image/web/2.jpg")
+      .image.image3
+        background-image: url("../image/web/3.jpg") 
+      .image:hover
+        cursor: pointer
+        &:before
+        background-size: 110% auto
+        background-position: 60% center
+        filter: opacity(.7)
+      .content
+        padding: 20px
+
+    .shot-item .face.face1
+      transform: translateY(200px)
+      z-index: 2
+    .shot-item:hover .face.face1
+      transform: translateY(0)
+      
+    .shot-item .face.face2
+      background-color: #fff
+      transform: translateY(-200px)
+      z-index: 1
+    .shot-item:hover .face.face2
+      transform: translateY(0px)
+    @media screen and ( max-width: 414px )
+      .shot-item
+        box-shadow: 0 3px 15px rgba(0,0,0,.3)
+        height: 600px
+        margin-bottom: 20px
+        .face.face1
+          transform: translateY(-60px)
+          box-shadow: none
+        .face.face2
+          transform: translateY(-120px)
+          box-shadow: none
+
+  &#design-works
+    background-color: #D1C8E1
+    h3.big-title
+      text-align: center
+      +titcom
+      color: $color_graypurple
+    span.spe-title
+      position: absolute
+      right: 32%
+      top: -30px 
+      +spetitcom
+      color: $color_graypurple
+    .allworks
+      .masonry-col
+        width: 33.333333%
+        padding: 16px
+        .shot-item
+          width: 100%
+          padding: 12px
+          background-color: rgba(255,255,255,.1)
+          box-shadow: 0 3px 15px rgba(0,0,0,.3)
+          border-radius: 10px
+          border-top: 1px solid rgba(255,255,255,0.5)
+          border-left: 1px solid rgba(255,255,255,0.5)
+          backdrop-filter: blur(5px)
+          img
+            width: 100%
+        .shot-item:after
+          content: ''
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-color: rgba(0,0,0,0.7)
+          border-radius: 10px
+          opacity: 0
+          transition: all .5s
+        // .shot-item:hover:after
+        //   opacity: 1 
+        .pbtn-con
+          position: absolute
+          top: 50%
+          left: 10px
+          transform: translateY(-50%)
+          opacity: 0
+          transition-duration: .3s
+          transition-delay: .3s
+          .content
+            text-align: justify
+            line-height: 26px
+            margin-bottom: 12px
+            color: #fbfbfb
+  
+      @media screen and ( max-width: 414px )
+        .masonry-col
+          width: 100%
+          padding: 16px
+
+      .works:hover .shot-item:after
+        opacity: 1
+      .works:hover .pbtn-con
+        opacity: 1
+        left: 50%
+        transform: translate(-50%,-50%)
+      .works
+        overflow: hidden
+    .controls
+      display: flex
+      flex-direction: row
+      justify-content: space-between 
+      margin-top: 4rem
+      .filter
+        padding-left: 1rem
+        padding-right: 1rem
+        .btn.btn-2.is-checked
+          background-color: #fbfbfb
+          color: $color_green
+    .col-lg-4
+      padding-top: 16px
+      padding-bottom: 16px 
+  &#contact
+    .title-bar
+      position: absolute
+      left: 120px
+      top: 60px
+      .title
+        +titcom
+      .content
+        font-size: 1.2rem
+
+    .container
+      margin-top: 150px
+      h4
+        color: #DE9647
+        font-size: 3rem
+    .container.main-info
+      display: flex
+      flex-direction: row
+      justify-content: space-around 
+
+.copyright
+	background-color: #666
+
+.copyright .pa
+	color: #fff
+	text-align: center
+	font-size: 0.9rem
+	margin: 0
+	font-family: 微軟正黑體
+
+//cv.page
+#cv,#ws-seven
+  background-color: $color_purple
+  .card
+    padding: 20px
+    width: 50%
+    margin: 0 auto
+    .cvimg
+      width: 100%
+      text-align: center
+      padding: 20px
+      border-radius: 12px
+#ws-seven
+  .card
+    width: 40%
+    padding: 0
+    .cvimg
+      padding: 10px
+
+//works系列.page
+#ws-two
+  background-color: $color_purple
+  // .bx-wrapper
+  //   margin: 0 auto
+  //   max-width: 100%
+  //   background-color: $color_purple
+  //   .bx-controls-direction
+  //     bottom: 500px
+  .owl-carousel 
+    cursor: pointer
+    .image-con
+      padding-top: 20px
+      padding-bottom: 20px
+      img
+        width: 80%
+        // text-align: center
+        box-shadow: 0px 3px 20px rgba(0,0,0,0.2) 
+        border: 3px solid rgba(255,255,255,0.7)
+        border-radius: 4px
+
+  //照片多是寬的為主
+  .owl-carousel.imgwidth
+    img
+      width: 100%
+
+  .owl-carousel.imgmiddle
+    img
+      width: 90%
+
+.hero-1
+  padding-top: 150px
+.hero-2
+  padding-top: 60px
+#works-intro
+  .big-title
+    font-size: 2.4rem
+    margin-bottom: 2.4rem !important
+  .big-title,.title
+    color: $color_graypurple
+  .para
+    font-size: 1.2rem
+    font-weight: 600
+  .span
+    border-bottom: solid 3px $color_littlepurple
+
+
+// &#project
+  //   background-color: $color_littlepurple
+  //   span.spe-title
+  //     position: absolute
+  //     left: 380px
+  //     top: -30px
+  //     +spetitcom
+  //     color: #fff
+  //   h3.title
+  //     position: absolute
+  //     left: 150px
+  //     +titcom
+  //     color: #fff
+  //   p.content
+  //     font-size: 1.2rem
+  //     line-height: 2rem
+  //     font-weight: 600
+  //   .col-6
+  //     .img-con
+  //       width: 90%
+  //       height: 70vh
+  //       margin-left: 3rem
+  //       .image
+  //         display: block
+  //         font-size: 0px
+  //         width: 100%
+  //         height: 100%
+  //         background-image: url('../image/宣傳照.jpg')
+  //         background-size: 100% auto
+  //         background-position: center center
+  //         background-repeat: no-repeat
+  //         transition: all 0.3s
+  //       .image:hover
+  //         cursor: pointer
+  //         &:before
+  //         background-size: 110% auto
+  //         filter: opacity(.7)
+  //     .hint-con
+  //       top: -120px
+  //       right: 90px
+  //       font-size: 1.2rem
+  //       font-weight: 600
+  //       .hint
+  //         &:after
+  //           content: ""
+  //           display: block
+  //           position: absolute
+  //           top: -1px
+  //           left: 70px
+  //           height: 30px
+  //           width: 30px
+  //           background-image: url("../image/icon/up-arrow.png")
+  //           background-size: contain
+  //           background-position: center center
+  //           background-repeat: no-repeat 
+    
+    
+    
