@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 @charset "UTF-8"
 
-$color_graypurple: #475790
+$color_graypurple: #544fa0
 $color_littlepurple: #B7B7E1
 $color_purple: #D1C8E1
 $color_green: #6cdad8
@@ -9,7 +10,7 @@ $color_black: #474954
 
 *
   position: relative
-  font-family: 微軟正黑體
+  font-family: 'Noto Sans TC', 'Poppins',  微軟正黑體
   box-sizing: border-box
   
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
@@ -17,16 +18,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
   margin: 0
   padding: 0
   color: $color_graypurple
-  font-weight: 600
+  font-weight: 500
 
 // *hero
 .hero
   // border: solid 1px #666
   padding-top: 150px
-  padding-bottom: 120px
+  padding-bottom: 60px
 .hero-short
   padding-top: 20px
-  padding-bottom: 120px
+  padding-bottom: 80px
+@media screen and ( max-width: 414px )
+  .hero
+    padding-top: 120px
+    padding-bottom: 60px 
+  
 // navbar
 .navbar
   height: 85px
@@ -82,7 +88,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
 .menu
   display: none
 // 手機版navbar
-@media( max-width:800px )
+@media( max-width: 800px )
   .navbar
     height: 100%
     width: 200px
@@ -102,7 +108,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
         .nav-link
           line-height: 60px !important
   .navbar.open
-    right: 0
+    right: 0px
   .menu
     display: inline-block
     position: absolute
@@ -115,7 +121,35 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
     margin: 12px
     border-radius: 4px
     z-index: 100
-
+//bg背景
+.bg
+  width: 100%
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+.bg.bg-1
+  height: 25vh
+  background-image: url('../image/bg/littlepurple.png')
+.bg.bg-2
+  height: 25vh
+  background-image: url('../image/bg/littlepurple-2.png')
+//bgimage背景圖
+.bgimage
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+.bgimage.kv
+  background-image: url('../image/bg/kv-3.png')
+.bgimage.sp
+  background-image: url('../image/bg/sp-1.png')
+@media screen and ( max-width: 414px )
+  .bgimage
+    display: none
 // title共用
 @mixin titcom
   font-size: 2.5rem
@@ -155,22 +189,34 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p
 .fade-in-bottom.bottom2 
   -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.9s both
           animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.9s both
+.text-focus-in 
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.4s both
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.4s both
+.focus-in-contract 
+	-webkit-animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+	        animation: focus-in-contract 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+
+
 section
+  @media screen and ( max-width: 414px )
+    &#jumbotron.jumbotron
+      // padding-top: 450px
+      padding-bottom: 200px !important
   &#jumbotron.jumbotron
-    background-image: linear-gradient(to bottom right,#6161bd,#a796c5,#e2e2f3)
+    background-image: linear-gradient(to bottom right,#7d7ddd,#a796c5,#e2e2f3)
     padding-top: 500px
     padding-bottom: 440px
     .container-fluid
       .big-title
         font-size: 8rem
-        font-weight: 900
+        font-weight: 700
         line-height: 9.5rem
         letter-spacing: 1rem
         color: rgba(255,255,255,0.7)
         text-shadow: -6px 10px 20px  rgba(255,255,255,.6)
         position: absolute
         left: 39%
-        top: -200px
+        top: -240px
       .big-title.title2
         top: 30%
         left: 45%
@@ -181,12 +227,12 @@ section
         color: $color_graypurple
         position: absolute
         right: 16%
-        top: -65px
+        top: -90px
       .btn-group.pos
         position: absolute
         left: 45%
         top: 200px
-      @media screen and ( max-width: 800px )
+      @media screen and ( max-width: 1024px )
         .big-title
           font-size: 4.5rem
           top: -190px
@@ -197,31 +243,59 @@ section
           font-size: 1rem
         .btn-group.pos
           top: 120px
-        
+      @media screen and ( max-width: 414px )
+        .big-title
+          font-size: 2.5rem
+          top: -300px
+          left: 20%
+        .big-title.title2
+          font-size: 3rem
+          top: -210px
+          left: 23%
+        .sub-title
+          font-size: 6px
+          top: -90px
+          letter-spacing: 0.4rem
+          line-height: 1.5rem
+        .btn-group.pos
+          top: -10px 
+          left: 20% 
+      @media screen and ( max-width: 320px )
+        .big-title.title2
+          left: 6%
+        .btn-group.pos
+          left: 5%
   &#about-me 
     .img-con
       width: 90%
-      // margin-left: 3rem
-      img
-        width: 90%
-        border-radius: 60px 15px
-    .img-con.img1
       position: absolute
       right: 150px
-      bottom: 60px
+      // bottom: 60px
+      z-index: 2
+      .image
+        width: 90%
+        border-radius: 60px 15px
+        border-left: 12px solid #e2e2f3
+        border-bottom: 12px solid #e2e2f3
+        box-shadow: 0px 6px 20px rgba(255,255,255,0.6)
+    @media screen and ( max-width: 768px )
+      .img-con
+        position: static
     .big-title
       position: absolute
       top: -150px
       right: 0
       font-size: 6rem
-      font-weight: 900
+      font-weight: 700
       margin-bottom: 1.5rem
       color: $color_littlepurple
-
+      -webkit-text-stroke: 1px #fff
+      text-shadow: -6px 10px 15px  rgba(183,183,225,.6)
     @media screen and ( max-width: 414px )
       .big-title
         font-size: 3rem
-
+        right: 8%
+        // top: -25%
     .title-bar
       text-align: left
       margin-top: 30px
@@ -231,11 +305,12 @@ section
         color: $color_graypurple
       .content
         line-height: 2rem
-        margin-top: 1.5rem
+        margin-top: 2.5rem
         margin-bottom: 1.5rem
     .info-group
       display: flex
       flex-direction: row
+      padding-top: 30px
       .email
         margin-right: 1rem
       .fa-envelope
@@ -245,30 +320,58 @@ section
         color: $color_graypurple
       .phone
         margin-right: 1rem
+      .info
+        font-weight: 600
     a 
       display: block
       .btn
         margin-top: 3rem
- 
+    @media screen and ( max-width: 414px )
+      .title-bar
+        padding: 16px
+      .info-group
+        display: block
+        padding: 16px
+      .fa-mobile-alt
+        margin-left: 0 !important
+        margin-top: 28px
+      .cv-btn
+        margin-top: -20px
+
+  &#project
+    background-image: linear-gradient(#B7B7E1,#D1C8E1)
+  &#web-project
+    background-image: linear-gradient(#D1C8E1,#B7B7E1)
   &#web-project ,&#project
-    background-color: $color_littlepurple
     span.spe-title
       position: absolute
       left: 380px
       top: -30px
       +spetitcom
-      color: #fff
+      color: transparent
+      -webkit-text-stroke: 2px #fff
+      text-shadow: 1px 0px 12px  rgba(255,255,255,.4)
     h3.big-title
       position: absolute
-      left: 150px
+      left: 135px
       +titcom
-      color: #fff
-    
+      color: transparent
+      -webkit-text-stroke: 1px #fff
+      text-shadow: 1px 0px 12px  rgba(255,255,255,.4)
+    @media screen and ( max-width: 414px )
+      span.spe-title
+        left: 10%
+        font-size: 5rem
+      .big-title
+        right: 5%
+      .content
+        padding: 20px
     .img-con.pos
       margin-left: -80px
+      margin-top: 100px
     .img-con
-      width: 90%
-      height: 60vh
+      width: 100%
+      height: 65vh
       margin-left: 3rem
       // left: -120px
       padding-bottom: 64px
@@ -276,53 +379,83 @@ section
         display: block
         font-size: 0px
         width: 100%
-        height: 120%
         border-radius: 12px
         background-size: 100% auto
         background-position: center center
         background-repeat: no-repeat
         transition: all 0.3s
       .image.image1
+        height: 100%
         background-image: url('../image/宣傳照.jpg')
+        box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
       .image.image2
-        background-image: url('../image/works/web design/理想混蛋2.JPG')
+        background-image: url('../image/works/web design/日沐(待改).JPG')
+        box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
+        height: 65%
       .image.image3
-        background-image: url("../image/works/web design/日沐(待改).JPG")
+        background-image: url("../image/works/web design/作品集.jpg")
+        box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
+        height: 75%
       .image:hover
         cursor: pointer
         &:before
         background-size: 110% auto
         filter: opacity(.7)
+    .img-con.one
+      width: 90%
+    .hint-sm  
+      display: none
+    @media screen and ( max-width: 414px )
+      .img-con
+        width: 85%
+        height: 30vh
+        // margin-left: 0
+        margin-top: 20px
+      .img-con.pos
+        margin-top: 100px
+        margin-left: 20px
+      .image.image1,.image.image2,.image.image3
+        height: 100% !important
+      .hint-sm  
+        display: block
+        left: 15%
     // .img-con.pos
     //   left: 0
-    .pos
+    .word-con
       display: flex
       // flex-direction: column
       flex-wrap: wrap
       align-items: center
-      justify-content: flex-end
+      justify-content: center
       margin: 60px 0
       margin-top: 100px
-      .hint-con
-        // flex-direction: column
-        // align-self: flex-end 
-        .hint,.hint2
-          font-size: 1.2rem
-          font-weight: 600
-        .hint
-          &:after
-            content: ""
-            display: block
-            position: absolute
-            top: -1px
-            left: 70px
-            height: 30px
-            width: 30px
-            background-image: url("../image/icon/up-arrow.png")
-            background-size: contain
-            background-position: center center
-            background-repeat: no-repeat
-        .hint2
+      .title
+        margin-right: 24px
+        border-right: 2.5px solid
+        padding: 6px
+    .hint-con
+      // flex-direction: column
+      // align-self: flex-end 
+      display: flex
+      justify-content: flex-end
+      // align-items: flex-end
+      .hint,.hint2
+        font-size: 1.2rem
+        font-weight: 600
+      .hint
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          top: -1px
+          left: 70px
+          height: 30px
+          width: 30px
+          background-image: url("../image/icon/up-arrow.png")
+          background-size: contain
+          background-position: center center
+          background-repeat: no-repeat
+      .hint2
           &:before
             content: ""
             display: block
@@ -334,30 +467,51 @@ section
             background-image: url("../image/icon/reverse-arrow.png")
             background-size: contain
             background-position: center center
-            background-repeat: no-repeat           
-    .pos.pos-2
+            background-repeat: no-repeat 
+    .hint-con.two
+      justify-content: flex-start          
+    .word-con.pos-2
       justify-content: flex-start
+    @media screen and ( max-width: 800px )
+      .word-con
+        margin: 6px 0
+      .hint-con
+        display: none
   &#project
     .col-6
       // .img-con
       //   left: -40px
-
-        
+       
   &#web-works
     h3.big-title
       text-align: center
       +titcom
-      font-size: 4rem
-      color: $color_graypurple
+      font-size: 3.5rem
+      color: #6a5ac5
+      -webkit-text-stroke: 0.5px #fff
+      text-shadow: -6px 8px 14px rgba(106,90,197,.4)
     span.spe-title
       position: absolute
-      right: 35%
+      right: 30%
       top: -30px 
       +spetitcom
-      color: $color_graypurple
+      color: #6a5ac5
+      -webkit-text-stroke: 1px #fff
+      text-shadow: -6px 8px 14px rgba(106,90,197,.4)
+    @media screen and ( max-width: 1024px )
+      h3 
+        text-align: center
+        margin-bottom: 12px
+      span.spe-title
+        // left: 10%
+        position: static
+      h3.big-title
+        // margin: 20px 0
+        // padding-top: 20px
+        margin-bottom: 16px
+        font-size: 3rem
     .shot-item
       width: 100%
-      
       .face
         width: 100%
         transition: 0.3s 
@@ -368,6 +522,7 @@ section
         // height: 100px
         // background-color: rgba(255,255,255,.1)
         box-shadow: 0 3px 15px rgba(0,0,0,.3)
+        padding: 16px
       .image
         display: block
         font-size: 0px
@@ -378,19 +533,22 @@ section
         background-repeat: no-repeat
         transition: all 0.3s
       .image.image1
-        background-image: url("../image/web/1.jpg")
+        background-image: url("../image/web/購物清單.jpg")
       .image.image2
-        background-image: url("../image/web/2.jpg")
+        background-image: url("../image/web/ig小動畫.jpg")
       .image.image3
-        background-image: url("../image/web/3.jpg") 
+        background-image: url("../image/web/四季.jpg") 
       .image:hover
         cursor: pointer
         &:before
         background-size: 110% auto
         background-position: 60% center
         filter: opacity(.7)
+      .title
+        padding: 16px
       .content
-        padding: 20px
+        padding: 12px
+        
 
     .shot-item .face.face1
       transform: translateY(200px)
@@ -403,31 +561,79 @@ section
       transform: translateY(-200px)
       z-index: 1
     .shot-item:hover .face.face2
-      transform: translateY(0px)
-    @media screen and ( max-width: 414px )
+      transform: translateY(0px) 
+    @media screen and ( max-width: 1024px )
       .shot-item
         box-shadow: 0 3px 15px rgba(0,0,0,.3)
-        height: 600px
-        margin-bottom: 20px
+        height: 550px
+        margin-top: 50px
         .face.face1
-          transform: translateY(-60px)
+          transform: translateY(-90px)
           box-shadow: none
         .face.face2
-          transform: translateY(-120px)
+          transform: translateY(-160px)
           box-shadow: none
+      
+    @media screen and ( max-width: 768px )
+      .shot-item
+        // box-shadow: 0 3px 15px rgba(0,0,0,.3)
+        // height: 550px
+        margin-bottom: 30px
+        .face.face1
+          transform: translateY(0px)
+          // box-shadow: none
+        .face.face2
+          transform: translateY(-10px)
+          // box-shadow: none
+    @media screen and ( max-width: 414px )
+      .shot-item
+        // box-shadow: 0 3px 15px rgba(0,0,0,.3)
+        height: 450px
+        margin: 30px 0
+        
+        .face.face1
+          transform: translateY(-100px)
+          // box-shadow: none
+        .face.face2
+          transform: translateY(-180px)
+          // box-shadow: none
 
   &#design-works
     background-color: #D1C8E1
     h3.big-title
       text-align: center
       +titcom
-      color: $color_graypurple
+      font-size: 3.5rem
+      color: #6a5ac5
+      -webkit-text-stroke: .5px #fff
+      text-shadow: -6px 8px 14px rgba(106,90,197,.4)
     span.spe-title
       position: absolute
-      right: 32%
+      right: 28%
       top: -30px 
       +spetitcom
-      color: $color_graypurple
+      color: #6a5ac5
+      -webkit-text-stroke: 1px #fff
+      text-shadow: -6px 8px 14px rgba(106,90,197,.4)
+    @media screen and ( max-width: 1024px )
+      h3 
+        text-align: center
+        margin-bottom: 12px
+      span.spe-title
+        // left: 10%
+        position: static
+      h3.big-title
+        // margin: 20px 0
+        // padding-top: 20px
+        margin-bottom: 16px
+        font-size: 3rem
+      .controls
+        flex-direction: column !important
+        .title
+          margin: 0 20px
+          margin-bottom: 12px
+        .btn
+          margin: 8px
     .allworks
       .masonry-col
         width: 33.333333%
@@ -532,14 +738,24 @@ section
 #cv,#ws-seven
   background-color: $color_purple
   .card
-    padding: 20px
+    padding: 12px
     width: 50%
     margin: 0 auto
     .cvimg
       width: 100%
       text-align: center
-      padding: 20px
+      padding: 12px
       border-radius: 12px
+  @media screen and ( max-width: 414px )
+    .card
+      width: 95%
+      .cvimg
+        padding: 4px
+@media screen and ( max-width: 1024px )
+  #cv
+    height: 100vh
+    .card
+      width: 80%
 #ws-seven
   .card
     width: 40%
@@ -576,6 +792,44 @@ section
   .owl-carousel.imgmiddle
     img
       width: 90%
+  @media screen and ( max-width: 768px )
+    .owl-carousel.imgmiddle
+      img
+        width: 100%
+
+  // owl-carousel owl-nav
+  .owl-theme .owl-nav
+    position: absolute
+    width: 100%
+    top: 50%
+  
+  .owl-theme .owl-nav button.owl-prev,
+  .owl-theme .owl-nav button.owl-next
+    position: absolute
+    /*border: 1px solid #fff*/
+    width: 32px
+    height: 45px
+    top: 0
+    transform: translate(0,-50%)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    z-index: 500
+    opacity: 0.8
+    transition: all 0.3s
+  
+  .owl-theme .owl-nav button.owl-prev
+    left: -50px
+    background-image: url("../image/icon/back.svg")
+
+  .owl-theme .owl-nav button.owl-next
+    right: -50px
+    background-image: url("../image/icon/next.svg")
+  
+  .owl-theme .owl-nav button:hover.owl-prev,.owl-theme .owl-nav button:hover.owl-next
+    background-color: transparent !important
+    opacity: 1
+  
 
 .hero-1
   padding-top: 150px
@@ -585,11 +839,15 @@ section
   .big-title
     font-size: 2.4rem
     margin-bottom: 2.4rem !important
+    font-style: italic
+    font-weight: 700
   .big-title,.title
     color: $color_graypurple
+  .title
+    font-weight: 600
   .para
     font-size: 1.2rem
-    font-weight: 600
+    
   .span
     border-bottom: solid 3px $color_littlepurple
 

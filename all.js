@@ -37,13 +37,27 @@ $(document).ready(function(){
 		$('html,body').animate({scrollTop:targetTop},1000);
 	});
 	
+	//button選單切換照片 無法有瀑布流效果
+	// $('.control-group > a').on('click',function(){
+	// 	if($(this).attr('rel')) {
+	// 		$('img').filter('[class="' + $(this).attr('rel') + '"]').show().parents(".works").hide();
+	// 	} else {
+	// 		$('img').parents(".works").show();
+	// 	}
+	// 	console.log('.control-group > a','click');
+	// 	return false;
+		
+	// });
 
-    // masonry 插件 //
-	$('.masonry-row').masonry({
-    // options
-  		itemSelector: '.masonry-col',
+
+	// masonry 插件 //
+	$('.masonry-row').imagesLoaded( function() {
+		$('.masonry-row').masonry({
+			// options
+				itemSelector: '.masonry-col',
+				// columnWidth: 10
+		});
 	});
-
 	// isotope 插件 //
 	var $allworks = $('.allworks').isotope({
   	// options
@@ -66,19 +80,119 @@ $(document).ready(function(){
 	  });
 	});
 
+	// Jquery第三方插件
+		// masonry 插件 //
+	// var $grid = $('.masonry-row').imagesLoaded( function() {
+	// $('.masonry-row').masonry({
+	// // options
+	// 	itemSelector: '.masonry-col',
+	// 	// animate: true,
+	// 	// horizontalOrder: true,
+	// 	// originTop: true
+	// });
+	// });
+	// $('.masonry-row').imagesLoaded().always( function( instance ) {
+	// 	$('.loadingScreen').fadeOut();
+	// });
+	
+
+	// // // isotope 插件 //
+	// var $allworks = $('.allworks').isotope({
+  // 	// options
+  // 		itemSelector: '.works',
+  // 		layoutMode: 'masonry'
+	// });
+	// $(".filter button").on('click', function(){
+	// 	var value = $(this).attr("data-filter");
+	// 	$allworks.isotope({
+	// 		filter: value
+	// 	});
+	// });
+
+	// // // change is-checked class on buttons
+	// $('.control-group').each( function( i, controlGroup ) {
+	//   var $controlGroup = $( controlGroup );
+	//   $controlGroup.on( 'click', 'button', function() {
+	//     $controlGroup.find('.is-checked').removeClass('is-checked');
+	//     $( this ).addClass('is-checked');
+	//   });
+	// });
+
 	//wow滾動插件
-	new WOW().init();
-	wow = new WOW({
-        boxClass:     'wow',      // default
-        animateClass: 'animate', // default
-        offset:       0,          // default
-        mobile:       true,       // default
-        live:         true        // default
-    }
-    );
+	// new WOW().init();
+	// wow = new WOW({
+  //       boxClass:     'wow',      // default
+  //       animateClass: 'animate', // default
+  //       offset:       0,          // default
+  //       mobile:       true,       // default
+	// 			live:         true,        // default
+	// 			// reset:        true
+  //   }
+  //   );
+	// wow.init();
+	
+	WOW.prototype.addBox = function(element){
+		this.boxes.push(element);
+	};
+	var wow = new WOW();
 	wow.init();
 	
+	// Attach scrollSpy to .wow elements for detect view exit events,
+  // then reset elements and add again for animation
+  $('.wow').on('scrollSpy:exit', function() {
+    $(this).css({
+      'visibility': 'hidden',
+      'animation-name': 'none'
+    }).removeClass('animated');
+    wow.addBox(this);
+	}).scrollSpy();
 	
+
+	//scrollreveal
+	ScrollReveal().reveal('.js-fadeInUP-2', { 
+		origin: 'top',
+		distance: '50px',
+		duration: 800, 
+		delay: 700,
+		reset: true
+	});
+	ScrollReveal().reveal('.js-fadeInUP', { 
+		origin: 'top',
+		distance: '50px',
+		duration: 800, 
+		delay: 400,
+		reset: true
+	});
+	ScrollReveal().reveal('.js-fadeInLeft', { 
+			origin: 'left',
+			distance: '50px',
+			duration: 700, 
+			delay: 700,
+			reset: true
+	});
+	ScrollReveal().reveal('.js-fadeInLeft-2', { 
+		origin: 'left',
+		distance: '50px',
+		duration: 700,
+		delay: 400,
+		reset: true
+	});
+	ScrollReveal().reveal('.js-fadeInRight', { 
+			origin: 'right',
+			distance: '50px',
+			duration: 700, 
+			delay: 200,
+			reset: true
+	});
+	// ScrollReveal().reveal('.js-main_card', { 
+	// 		origin: 'top',
+	// 		distance: '50px',
+	// 		duration: 800, 
+	// 		delay: 300,
+	// 		interval: 500,
+	// 		reset: true
+	// });
+
 	// $('.control-group .btn.btn-2').click(function(){
 	// 	var selector = $(this).attr("data-filter");
 	// 	$('all-works').isotope({

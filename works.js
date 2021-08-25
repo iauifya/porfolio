@@ -1,13 +1,22 @@
 //owl-carousel
 $(".owl-carousel").owlCarousel({
-  items: 2,
   margin: 10,
-  // merge: true,
   autoHeight: true,
   loop: true,
   center: true,
   autoplay: true,
-  // autoplaySpeed: 200,
-  autoplayTimeout: 2000
-  // nav: true
+  autoplayTimeout: 2000,
+  autoplayHoverPause: true,
+  nav: true,
+	navText: [ ],
+  responsiveClass:true,
+  responsive:{
+    0:{
+      items: 1,
+    },
+    800:{
+      items: 2,
+      autoHeight: true,
+    },
+  }
 });

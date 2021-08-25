@@ -133,11 +133,11 @@ p,.para{
 	margin: 0 8px;
 	height: 36px;
 	line-height: 36px;
-	padding: 0 24px;
+	padding: 0 1.1rem;
 	min-width: 64px;
 
 	/* style */
-	font-size: 16px;
+	font-size: 1rem;
 	text-align: center;
 	font-weight: 400;
 	font-family: Helvetica,Arial,"Noto Sans TC","Helvetica Neue","微軟正黑體","Microsoft JhengHei", sans-serif;
