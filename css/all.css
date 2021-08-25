@@ -539,14 +539,14 @@ section#web-project .img-con .image.image1, section#project .img-con .image.imag
 }
 
 section#web-project .img-con .image.image2, section#project .img-con .image.image2 {
-  background-image: url("../image/works/web design/日沐(待改).JPG");
+  background-image: url("../image/最新.jpg");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
-  height: 65%;
+  height: 75%;
 }
 
 section#web-project .img-con .image.image3, section#project .img-con .image.image3 {
-  background-image: url("../image/works/web design/作品集.jpg");
+  background-image: url("../image/works/web design/理想混蛋.jpg");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
   height: 75%;
@@ -741,15 +741,15 @@ section#web-works .shot-item .image {
 }
 
 section#web-works .shot-item .image.image1 {
-  background-image: url("../image/web/購物清單.jpg");
+  background-image: url("../image/購物清單.jpg");
 }
 
 section#web-works .shot-item .image.image2 {
-  background-image: url("../image/web/ig小動畫.jpg");
+  background-image: url("../image/ig小動畫.jpg");
 }
 
 section#web-works .shot-item .image.image3 {
-  background-image: url("../image/web/四季.jpg");
+  background-image: url("../image/四季.jpg");
 }
 
 section#web-works .shot-item .image:hover {
@@ -813,8 +813,13 @@ section#web-works .shot-item:hover .face.face2 {
 }
 
 @media screen and (max-width: 768px) {
+  section#web-works .col-12 {
+    margin-bottom: 2.5rem;
+  }
   section#web-works .shot-item {
     margin-bottom: 30px;
+    width: 80%;
+    margin: 0 auto;
   }
   section#web-works .shot-item .face.face1 {
     -webkit-transform: translateY(0px);
