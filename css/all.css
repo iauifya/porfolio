@@ -539,7 +539,7 @@ section#web-project .img-con .image.image1, section#project .img-con .image.imag
 }
 
 section#web-project .img-con .image.image2, section#project .img-con .image.image2 {
-  background-image: url("../image/最新.jpg");
+  background-image: url("../image/最新.JPG");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
   height: 75%;
@@ -741,15 +741,15 @@ section#web-works .shot-item .image {
 }
 
 section#web-works .shot-item .image.image1 {
-  background-image: url("../image/購物清單.jpg");
+  background-image: url("../image/購物清單.JPG");
 }
 
 section#web-works .shot-item .image.image2 {
-  background-image: url("../image/ig小動畫.jpg");
+  background-image: url("../image/ig小動畫.JPG");
 }
 
 section#web-works .shot-item .image.image3 {
-  background-image: url("../image/四季.jpg");
+  background-image: url("../image/四季.JPG");
 }
 
 section#web-works .shot-item .image:hover {
