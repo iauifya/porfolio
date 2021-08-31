@@ -36,7 +36,12 @@ $(document).ready(function(){
 		//body往上捲出的距離，但不知道要捲多少所以先設變數targetTop 
 		$('html,body').animate({scrollTop:targetTop},1000);
 	});
-	
+
+	$('.nav a').click(function(){
+		$('.navbar').removeClass('open');
+		$(this).parent('.navbar').next().attr('src','image/icon/menu_open.png');
+	})
+
 	//button選單切換照片 無法有瀑布流效果
 	// $('.control-group > a').on('click',function(){
 	// 	if($(this).attr('rel')) {
