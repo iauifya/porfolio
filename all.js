@@ -1,4 +1,4 @@
-$(document).ready(function(){
+(function(){
 	$(window).scroll(function(){
         //抓取滾動距離
         scrolledPx = $(this).scrollTop();
@@ -40,6 +40,7 @@ $(document).ready(function(){
 	$('.nav a').click(function(){
 		$('.navbar').removeClass('open');
 		$(this).parent('.navbar').next().attr('src','image/icon/menu_open.png');
+		
 	})
 
 	//button選單切換照片 無法有瀑布流效果
@@ -221,5 +222,6 @@ $(document).ready(function(){
 	// 	auto: true,
 	// });
 
+})()
+
 	
-});
