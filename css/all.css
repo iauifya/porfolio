@@ -1068,18 +1068,18 @@ section#contact .container.main-info {
   margin: 0 auto;
 }
 
-#cv .card .cvimg, #ws-seven .card .cvimg {
+#cv .card .cvimg, #cv .card .sevenimg, #ws-seven .card .cvimg, #ws-seven .card .sevenimg {
   width: 100%;
   text-align: center;
-  padding: 12px;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 414px) {
   #cv .card, #ws-seven .card {
     width: 95%;
   }
-  #cv .card .cvimg, #ws-seven .card .cvimg {
+  #cv .card .cvimg, #cv .card .sevenimg, #ws-seven .card .cvimg, #ws-seven .card .sevenimg {
     padding: 4px;
   }
 }
@@ -1098,7 +1098,7 @@ section#contact .container.main-info {
   padding: 0;
 }
 
-#ws-seven .card .cvimg {
+#ws-seven .card .sevenimg {
   padding: 10px;
 }
 
