@@ -101,29 +101,6 @@
 	// 	$('.loadingScreen').fadeOut();
 	// });
 	
-
-	// // // isotope 插件 //
-	// var $allworks = $('.allworks').isotope({
-  // 	// options
-  // 		itemSelector: '.works',
-  // 		layoutMode: 'masonry'
-	// });
-	// $(".filter button").on('click', function(){
-	// 	var value = $(this).attr("data-filter");
-	// 	$allworks.isotope({
-	// 		filter: value
-	// 	});
-	// });
-
-	// // // change is-checked class on buttons
-	// $('.control-group').each( function( i, controlGroup ) {
-	//   var $controlGroup = $( controlGroup );
-	//   $controlGroup.on( 'click', 'button', function() {
-	//     $controlGroup.find('.is-checked').removeClass('is-checked');
-	//     $( this ).addClass('is-checked');
-	//   });
-	// });
-
 	//wow滾動插件
 	// new WOW().init();
 	// wow = new WOW({

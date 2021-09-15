@@ -233,7 +233,7 @@ section
         position: absolute
         left: 45%
         top: 200px
-      @media screen and ( max-width: 1024px )
+      @media screen and ( max-width: 1200px )
         .big-title
           font-size: 4.5rem
           top: -190px
@@ -244,7 +244,7 @@ section
           font-size: 1rem
         .btn-group.pos
           top: 120px
-      @media screen and ( max-width: 414px )
+      @media screen and ( max-width: 750px )
         .big-title
           font-size: 2.5rem
           top: -300px
@@ -282,7 +282,7 @@ section
         border-left: 12px solid #e2e2f3
         border-bottom: 12px solid #e2e2f3
         box-shadow: 0px 6px 20px rgba(255,255,255,0.6)
-    @media screen and ( max-width: 768px )
+    @media screen and ( max-width: 1000px )
       .img-con
         position: static
     .big-title
@@ -370,17 +370,31 @@ section
         right: 5%
       .content
         padding: 20px
-    .img-con.pos
+    
+    .img-con.one
+      margin-top: 100px
+    .img-con.two
       margin-left: -80px
       margin-top: 100px
     .img-con
       width: 100%
-      height: 65vh
+      
       margin-left: 3rem
+      
       // left: -120px
       padding-bottom: 64px
+      &::before
+          content: ""
+          display: block
+          padding-top: 50%
+          width: 100%
       .image
         display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
         font-size: 0px
         width: 100%
         border-radius: 12px
@@ -389,37 +403,36 @@ section
         background-repeat: no-repeat
         transition: all 0.3s
       .image.image1
-        height: 100%
-        background-image: url('../image/宣傳照.jpg')
+        // height: 100%
+        background-image: url('../image/works/web design/草癒.jpg')
         box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
       .image.image2
         background-image: url('../image/最新.JPG')
         box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
-        height: 75%
+        // height: 100%
       .image.image3
         background-image: url("../image/works/web design/理想混蛋.jpg")
         box-shadow: 3px 6px 28px rgba(255,255,255,0.6)
-        height: 75%
+        height: 100%
       .image:hover
         cursor: pointer
         &:before
         background-size: 110% auto
         filter: opacity(.7)
-    .img-con.one
-      width: 90%
+    
     .hint-sm  
       display: none
     @media screen and ( max-width: 414px )
       .img-con
-        width: 85%
-        height: 30vh
+        width: 100%
+        height: 100%
         // margin-left: 0
         margin-top: 20px
-      .img-con.pos
+      .img-con.two
         margin-top: 100px
         margin-left: 20px
       .image.image1,.image.image2,.image.image3
-        height: 100% !important
+        // height: 100% !important
       .hint-sm  
         display: block
         left: 15%
@@ -476,11 +489,16 @@ section
       justify-content: flex-start          
     .word-con.pos-2
       justify-content: flex-start
-    @media screen and ( max-width: 800px )
+    @media screen and ( max-width: 1000px )
+      .img-con
+        // width: 70%
       .word-con
         margin: 6px 0
       .hint-con
         display: none
+    @media screen and ( max-width: 1200px )
+      .img-con
+        // height: 60vh
   &#project
     .col-6
       // .img-con
@@ -566,25 +584,30 @@ section
       z-index: 1
     .shot-item:hover .face.face2
       transform: translateY(0px) 
-    @media screen and ( max-width: 1024px )
+    @media screen and ( max-width: 1200px )
       .shot-item
         box-shadow: 0 3px 15px rgba(0,0,0,.3)
         height: 550px
         margin-top: 50px
         .face.face1
-          transform: translateY(-90px)
+          transform: translateY(-60px)
           box-shadow: none
         .face.face2
-          transform: translateY(-160px)
+          transform: translateY(-90px)
           box-shadow: none
+        &:hover .face.face1
+          transform: translateY(-60px)
+        &:hover .face.face2
+          transform: translateY(-90px)
+      transform: translateY(0)
       
-    @media screen and ( max-width: 768px )
+    @media screen and ( max-width: 1000px )
       .col-12
         margin-bottom: 2.5rem
       .shot-item
         // box-shadow: 0 3px 15px rgba(0,0,0,.3)
         // height: 550px
-        margin-bottom: 30px
+        margin-bottom: 80px !important
         width: 80%
         margin: 0 auto
         .face.face1

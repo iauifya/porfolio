@@ -299,7 +299,7 @@ section#jumbotron.jumbotron .container-fluid .btn-group.pos {
   top: 200px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   section#jumbotron.jumbotron .container-fluid .big-title {
     font-size: 4.5rem;
     top: -190px;
@@ -316,7 +316,7 @@ section#jumbotron.jumbotron .container-fluid .btn-group.pos {
   }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 750px) {
   section#jumbotron.jumbotron .container-fluid .big-title {
     font-size: 2.5rem;
     top: -300px;
@@ -368,7 +368,7 @@ section#about-me .img-con .image {
           box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.6);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   section#about-me .img-con {
     position: static;
   }
@@ -511,20 +511,35 @@ section#web-project h3.big-title, section#project h3.big-title {
   }
 }
 
-section#web-project .img-con.pos, section#project .img-con.pos {
+section#web-project .img-con.one, section#project .img-con.one {
+  margin-top: 100px;
+}
+
+section#web-project .img-con.two, section#project .img-con.two {
   margin-left: -80px;
   margin-top: 100px;
 }
 
 section#web-project .img-con, section#project .img-con {
   width: 100%;
-  height: 65vh;
   margin-left: 3rem;
   padding-bottom: 64px;
 }
 
+section#web-project .img-con::before, section#project .img-con::before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+  width: 100%;
+}
+
 section#web-project .img-con .image, section#project .img-con .image {
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   font-size: 0px;
   width: 100%;
   border-radius: 12px;
@@ -536,8 +551,7 @@ section#web-project .img-con .image, section#project .img-con .image {
 }
 
 section#web-project .img-con .image.image1, section#project .img-con .image.image1 {
-  height: 100%;
-  background-image: url("../image/宣傳照.jpg");
+  background-image: url("../image/works/web design/草癒.jpg");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
 }
@@ -546,14 +560,13 @@ section#web-project .img-con .image.image2, section#project .img-con .image.imag
   background-image: url("../image/最新.JPG");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
-  height: 75%;
 }
 
 section#web-project .img-con .image.image3, section#project .img-con .image.image3 {
   background-image: url("../image/works/web design/理想混蛋.jpg");
   -webkit-box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
           box-shadow: 3px 6px 28px rgba(255, 255, 255, 0.6);
-  height: 75%;
+  height: 100%;
 }
 
 section#web-project .img-con .image:hover, section#project .img-con .image:hover {
@@ -563,26 +576,19 @@ section#web-project .img-con .image:hover, section#project .img-con .image:hover
           filter: opacity(0.7);
 }
 
-section#web-project .img-con.one, section#project .img-con.one {
-  width: 90%;
-}
-
 section#web-project .hint-sm, section#project .hint-sm {
   display: none;
 }
 
 @media screen and (max-width: 414px) {
   section#web-project .img-con, section#project .img-con {
-    width: 85%;
-    height: 30vh;
+    width: 100%;
+    height: 100%;
     margin-top: 20px;
   }
-  section#web-project .img-con.pos, section#project .img-con.pos {
+  section#web-project .img-con.two, section#project .img-con.two {
     margin-top: 100px;
     margin-left: 20px;
-  }
-  section#web-project .image.image1, section#web-project .image.image2, section#web-project .image.image3, section#project .image.image1, section#project .image.image2, section#project .image.image3 {
-    height: 100% !important;
   }
   section#web-project .hint-sm, section#project .hint-sm {
     display: block;
@@ -666,7 +672,7 @@ section#web-project .word-con.pos-2, section#project .word-con.pos-2 {
           justify-content: flex-start;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   section#web-project .word-con, section#project .word-con {
     margin: 6px 0;
   }
@@ -795,7 +801,11 @@ section#web-works .shot-item:hover .face.face2 {
           transform: translateY(0px);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
+  section#web-works {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   section#web-works .shot-item {
     -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
@@ -803,25 +813,33 @@ section#web-works .shot-item:hover .face.face2 {
     margin-top: 50px;
   }
   section#web-works .shot-item .face.face1 {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  section#web-works .shot-item .face.face2 {
     -webkit-transform: translateY(-90px);
             transform: translateY(-90px);
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  section#web-works .shot-item .face.face2 {
-    -webkit-transform: translateY(-160px);
-            transform: translateY(-160px);
-    -webkit-box-shadow: none;
-            box-shadow: none;
+  section#web-works .shot-item:hover .face.face1 {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+  }
+  section#web-works .shot-item:hover .face.face2 {
+    -webkit-transform: translateY(-90px);
+            transform: translateY(-90px);
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   section#web-works .col-12 {
     margin-bottom: 2.5rem;
   }
   section#web-works .shot-item {
-    margin-bottom: 30px;
+    margin-bottom: 80px !important;
     width: 80%;
     margin: 0 auto;
   }
