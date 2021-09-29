@@ -434,7 +434,16 @@ section#about-me .info-group .fa-mobile-alt {
   color: #544fa0;
 }
 
+section#about-me .info-group .fa-github {
+  margin-left: 2rem;
+  color: #544fa0;
+}
+
 section#about-me .info-group .phone {
+  margin-right: 1rem;
+}
+
+section#about-me .info-group .githnb {
   margin-right: 1rem;
 }
 
